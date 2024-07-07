@@ -1,23 +1,20 @@
-let display = document.querySelector("#input")
-let but = document.querySelectorAll("button")
-console.log(display.value)
-
-
-
+// using jquery
 function appendToDisplay(value){
-   display.value += value;
-    
+    $("#input").val(function(i, oldValue) {
+        return oldValue + value;
+
+})
 }
 function Clear(){
-    display.value = ''
+    $("#input").val('')
 }
 function calculate(){
     try{
-        let result = eval(display.value)
-        display.value = result;
+        let result = eval($("#input").val())
+        $("#input").val(result)
     }
     catch(e){
-        display.value= `error`
+        $("#input").val(`error`)
     }
     
 }
@@ -25,6 +22,6 @@ function preventKeyboardInput(event) {
     event.preventDefault();}
 
     function back() {
-        var value = document.getElementById("input").value;
-        document.getElementById("input").value = value.substr(0, value.length - 1);
+        var value =  $("#input").val();
+        $("#input").val(value.substr(0, value.length - 1))
     }
