@@ -14,6 +14,7 @@
     <div class="container">
         <input type="text" name="input" id="input" onkeydown="preventKeyboardInput(event)">
         <div class="sub-buttons">
+            <button onclick="Clear()">C</button>
             <button onclick="back()"><i class="fa-solid fa-delete-left"></i></button>
 
         </div>
@@ -32,8 +33,9 @@
             <button onclick="appendToDisplay('-')">-</button>
             <button onclick="appendToDisplay('0')">0</button>
             <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('.')">.</button>
             <button onclick="calculate()">=</button>
-            <button onclick="Clear()">C</button>
+          
 
         </div>
     </div>
